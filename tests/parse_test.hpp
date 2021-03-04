@@ -4,7 +4,7 @@
 #include "../headers/parse.hpp"
 #include "gtest/gtest.h"
 #include <string>
-/*
+
 TEST(ParseTest, OneNum){
 	char* test_val[2];
 	test_val[0] = strdup("./calculator");
@@ -47,7 +47,7 @@ TEST(ParseTest, Addition){
         for(int i = 0; i < 4; i++){
                 free(test_val[i]);
         }
-}*/
+}
 
 TEST(InvalidTest, OneOperand) {
 	char* test_val[3];
@@ -60,10 +60,10 @@ TEST(InvalidTest, OneOperand) {
         delete factory;
         delete test;
         for(int i = 0; i < 3; i++){
-                delete test_val[i];
+                free(test_val[i]);
         }	
 }
-/*
+
 TEST(InvalidTest, NoOperand) {
         char* test_val[3];
         test_val[0] = strdup("./calculator");
@@ -116,8 +116,8 @@ TEST(InvalidTest, MultAddSubDivMultInv) {
         for(int i = 0; i < 10; i++){
                 free(test_val[i]);
         }
-}*/
-/*
+}
+
 TEST(LongerEquation, AddDiv) {
         char* test_val[6];
         test_val[0] = strdup("./calculator");
@@ -204,7 +204,7 @@ TEST(ParseTest, SubNegative){
 
 TEST(ParseTest, Mult){
 	char* test[4];
-	test[0]= strdup("./calculator"); test[1]= strdup("3"); test[2]= strdup("\*"); test[3]= strdup("5");
+	test[0]= strdup("./calculator"); test[1]= strdup("3"); test[2]= strdup("*"); test[3]= strdup("5");
 	Factory* f = new Parse();
 	Base* calc = f->parse(test, 4);
 	EXPECT_EQ(15, calc->evaluate());
@@ -217,7 +217,7 @@ TEST(ParseTest, Mult){
 
 TEST(ParseTest, Pow){
 	char* test[4];
-	test[0] = strdup("./calculator"); test[1] = strdup("2"); test[2] = strdup("\*\*"); test[3]= strdup("5");
+	test[0] = strdup("./calculator"); test[1] = strdup("2"); test[2] = strdup("**"); test[3]= strdup("5");
 	Factory* f = new Parse();
 	Base* calc = f->parse(test,4);
 	EXPECT_EQ(32, calc->evaluate());
@@ -240,5 +240,5 @@ TEST(ParseTest, Div){
                 free(test[i]);
         }
 }
-*/
+
 #endif
