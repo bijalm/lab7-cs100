@@ -6,7 +6,7 @@
 class Base {
     public:
         /* Constructors */
-        Base() { };
+        Base() { }
 	virtual ~Base() { }
 
         /* Pure Virtual Functions */
