@@ -10,7 +10,8 @@ class Op : public Base {
 		double value;
     public:
         Op(double value) : Base() { this->value = value;}
-        virtual double evaluate() { return value; }
+        virtual ~Op() { }
+	virtual double evaluate() { return value; }
         virtual string stringify() { return to_string(value); }
 };
 
