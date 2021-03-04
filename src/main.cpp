@@ -8,12 +8,13 @@ int main(int argv, char** argc) {
 	Base* calc = factory->parse(argc, argv);
 	if (calc) {
 		std::cout << calc->stringify() << " = " << calc->evaluate() << std::endl;
-		delete factory;
-		delete calc;
 	}
 	else {
 		std::cout << "Invalid input!" << std::endl;
 	}
+	
+	delete factory;
+	delete calc;
 	
 	//std::cout << minus->stringify() << " = " << minus->evaluate() << std::endl;
 	return 0;
