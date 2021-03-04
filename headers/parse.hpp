@@ -8,8 +8,8 @@
 #include <string>
 
 class Parse : public Factory {
-	public:
-		 Base* parse(char** input, int length) {
+	public:	 
+		Base* parse(char** input, int length) {
 			std::queue<Base*> nums;
 			std::stack<char*> operation; 
 			for(int i = 1; i < length; ++i){
