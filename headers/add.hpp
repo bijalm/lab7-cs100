@@ -12,6 +12,10 @@ class Add : public Base {
 	    this->lhs = lhs;
 	    this->rhs = rhs;
 	}
+	~Add(){
+		delete lhs;
+		delete rhs;
+	}
 	virtual double evaluate() {return lhs->evaluate() + rhs->evaluate();}
 	virtual std::string stringify()  {return "(" + lhs->stringify() + " + " + rhs->stringify() +  ")";};
 

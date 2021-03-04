@@ -13,6 +13,10 @@ class Div : public Base {
 	    this->lhs = lhs;
 	    this->rhs = rhs;
 	}
+	~Div(){
+		delete lhs;
+		delete rhs;
+	}
 	virtual double evaluate() {
 		if (rhs->evaluate() == 0) {
 			//std::cout << "Zero in denominator" << std::endl;

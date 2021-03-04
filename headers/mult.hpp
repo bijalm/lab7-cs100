@@ -14,6 +14,10 @@ class Mult : public Base {
 			this->lhs = lhs;
 			this->rhs = rhs;
 		}
+		~Mult() {
+			delete lhs;
+			delete rhs;
+		}
 	
 		// member functions
 		virtual double evaluate() {return lhs->evaluate() * rhs->evaluate(); };
